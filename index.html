@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MedicoST Finder - Upload Prescription</title>
+</head>
+<body>
+  <h1>MedicoST Finder — Upload Prescription</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <label>Prescription image: <input type="file" name="file" accept="image/*" required></label><br><br>
+    <label>Your latitude: <input type="text" name="user_lat" placeholder="17.43"></label><br>
+    <label>Your longitude: <input type="text" name="user_lon" placeholder="78.44"></label><br><br>
+    <button type="submit">Upload and Compare</button>
+  </form>
+
+  <hr>
+  <p>Example: use curl to upload image and get JSON result:</p>
+  <pre>
+curl -X POST -F "file=@/path/to/prescription.jpg" -F "user_lat=17.43" -F "user_lon=78.44" http://127.0.0.1:5000/upload
+  </pre>
+</body>
+</html>
